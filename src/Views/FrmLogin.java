@@ -27,11 +27,11 @@ public class FrmLogin extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
-        txtContraseña = new javax.swing.JPasswordField();
+        txt_Contraseña = new javax.swing.JPasswordField();
         jLabel3 = new javax.swing.JLabel();
         btnLogin = new javax.swing.JButton();
         btnCancelar = new javax.swing.JButton();
-        txtAlias = new javax.swing.JTextField();
+        txt_Alias = new javax.swing.JTextField();
         jTextField3 = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -57,7 +57,7 @@ public class FrmLogin extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 170, 30, -1));
-        jPanel1.add(txtContraseña, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 170, 156, -1));
+        jPanel1.add(txt_Contraseña, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 170, 156, -1));
 
         jLabel3.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
@@ -77,12 +77,12 @@ public class FrmLogin extends javax.swing.JFrame {
         btnCancelar.setText("Cancelar");
         jPanel1.add(btnCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 230, 100, 40));
 
-        txtAlias.addActionListener(new java.awt.event.ActionListener() {
+        txt_Alias.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtAliasActionPerformed(evt);
+                txt_AliasActionPerformed(evt);
             }
         });
-        jPanel1.add(txtAlias, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 100, 156, -1));
+        jPanel1.add(txt_Alias, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 100, 156, -1));
 
         jTextField3.setBackground(new java.awt.Color(0, 0, 0));
         jTextField3.addActionListener(new java.awt.event.ActionListener() {
@@ -101,9 +101,9 @@ public class FrmLogin extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField1ActionPerformed
 
-    private void txtAliasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtAliasActionPerformed
+    private void txt_AliasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_AliasActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtAliasActionPerformed
+    }//GEN-LAST:event_txt_AliasActionPerformed
 
     private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
         // TODO add your handling code here:
@@ -154,7 +154,7 @@ public class FrmLogin extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField3;
-    public javax.swing.JTextField txtAlias;
-    public javax.swing.JPasswordField txtContraseña;
+    public javax.swing.JTextField txt_Alias;
+    public javax.swing.JPasswordField txt_Contraseña;
     // End of variables declaration//GEN-END:variables
 }

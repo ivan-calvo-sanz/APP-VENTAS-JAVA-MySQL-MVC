@@ -24,24 +24,30 @@ public class LoginController implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
+        // ACCION DEL BOTON "LOGIN"
         if (e.getSource() == frmLogin.btnLogin) {
-            if (frmLogin.txtAlias.getText().equals("") || String.valueOf(frmLogin.txtContraseña.getPassword()).equals("")) {
+            if (frmLogin.txt_Alias.getText().equals("") || String.valueOf(frmLogin.txt_Contraseña.getPassword()).equals("")) {
                 JOptionPane.showMessageDialog(null, "Los campos están vacios");
             } else {
-                String alias = frmLogin.txtAlias.getText();
-                String contraseña = String.valueOf(frmLogin.txtContraseña.getPassword());
+                String alias = frmLogin.txt_Alias.getText();
+                String contraseña = String.valueOf(frmLogin.txt_Contraseña.getPassword());
                 usuario = usuarioDao.login(alias, contraseña);
                 if (usuario.getAlias() != null) {
                     FrmAdmin frmAdmin = new FrmAdmin();
                     frmAdmin.setVisible(true);
                     this.frmLogin.dispose();
-                }else{
-                    System.out.println("Usuario introducido NO existe");
+                } else {
+                    JOptionPane.showMessageDialog(null, "Usuario o contraseña incorrecta");
                 }
 
             }
+            // ACCION DEL BOTON "CANCELAR"
         } else {
-
+            int pregunta = JOptionPane.showConfirmDialog(null, "¿Está seguro que desea salir?", "Pregunta", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+// Si el Usuario pulsa "SI" devuelve int "0", slimos del programa
+            if (pregunta == 0) {
+                System.exit(0);
+            }
         }
     }
 

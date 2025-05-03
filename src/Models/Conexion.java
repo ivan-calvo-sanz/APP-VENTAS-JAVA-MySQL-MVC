@@ -14,8 +14,6 @@ public class Conexion {
     final static String USUARIO = "root";
     final static String CLAVE = "";
 
-
-
     /**
      * 01-Conectar a BBDD
      */
@@ -38,5 +36,4 @@ public class Conexion {
     public Connection getConexion() {
         return miConexion;
     }
-
 }
