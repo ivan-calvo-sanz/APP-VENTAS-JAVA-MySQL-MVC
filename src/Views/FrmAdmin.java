@@ -4,7 +4,10 @@
  */
 package Views;
 
-import Controllers.ConfigControllers;
+import Controllers.ConfigController;
+import Controllers.UsuarioController;
+import Models.Usuario;
+import Models.UsuarioDAO;
 
 /**
  *
@@ -12,12 +15,13 @@ import Controllers.ConfigControllers;
  */
 public class FrmAdmin extends javax.swing.JFrame {
 
-    /**
-     * Creates new form FrmAdmin
-     */
+    private Usuario usuario = new Usuario();
+    private UsuarioDAO usuarioDAO = new UsuarioDAO();
+
     public FrmAdmin() {
         initComponents();
-        ConfigControllers configControllers=new ConfigControllers(this);
+        ConfigController configController = new ConfigController(this);
+        UsuarioController usuarioController = new UsuarioController(usuario, usuarioDAO, this);
     }
 
     /**
@@ -238,9 +242,9 @@ public class FrmAdmin extends javax.swing.JFrame {
 
         jLabel_NuevaVenta.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel_NuevaVenta.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel_NuevaVenta.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel_NuevaVenta.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel_NuevaVenta.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/Nventa.png"))); // NOI18N
-        jLabel_NuevaVenta.setText("Nueva Venta");
+        jLabel_NuevaVenta.setText(" Nueva Venta");
         jLabel_NuevaVenta.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         javax.swing.GroupLayout jPanel_NuevaVentaLayout = new javax.swing.GroupLayout(jPanel_NuevaVenta);
@@ -260,9 +264,9 @@ public class FrmAdmin extends javax.swing.JFrame {
 
         jLabel_NuevaCompra.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel_NuevaCompra.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel_NuevaCompra.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel_NuevaCompra.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel_NuevaCompra.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/Carrito-de-compras.png"))); // NOI18N
-        jLabel_NuevaCompra.setText("Nueva Compra");
+        jLabel_NuevaCompra.setText("       Nueva Compra");
         jLabel_NuevaCompra.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         javax.swing.GroupLayout jPanel_NuevaCompraLayout = new javax.swing.GroupLayout(jPanel_NuevaCompra);
@@ -282,9 +286,9 @@ public class FrmAdmin extends javax.swing.JFrame {
 
         jLabel_Productos.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel_Productos.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel_Productos.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel_Productos.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel_Productos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/producto.png"))); // NOI18N
-        jLabel_Productos.setText("Productos");
+        jLabel_Productos.setText("      Productos");
         jLabel_Productos.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         javax.swing.GroupLayout jPanel_ProductosLayout = new javax.swing.GroupLayout(jPanel_Productos);
@@ -304,9 +308,9 @@ public class FrmAdmin extends javax.swing.JFrame {
 
         jLabel_Clientes.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel_Clientes.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel_Clientes.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel_Clientes.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel_Clientes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/Clientes.png"))); // NOI18N
-        jLabel_Clientes.setText("Clientes");
+        jLabel_Clientes.setText("      Clientes");
         jLabel_Clientes.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         javax.swing.GroupLayout jPanel_ClientesLayout = new javax.swing.GroupLayout(jPanel_Clientes);
@@ -326,9 +330,9 @@ public class FrmAdmin extends javax.swing.JFrame {
 
         jLabel_Proveedor.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel_Proveedor.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel_Proveedor.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel_Proveedor.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel_Proveedor.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/proveedor.png"))); // NOI18N
-        jLabel_Proveedor.setText("Proveedores");
+        jLabel_Proveedor.setText("     Proveedores");
         jLabel_Proveedor.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         javax.swing.GroupLayout jPanel_ProveedorLayout = new javax.swing.GroupLayout(jPanel_Proveedor);
@@ -348,9 +352,9 @@ public class FrmAdmin extends javax.swing.JFrame {
 
         jLabel_Medidas.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel_Medidas.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel_Medidas.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel_Medidas.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel_Medidas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/detallista.png"))); // NOI18N
-        jLabel_Medidas.setText("Medidas");
+        jLabel_Medidas.setText("     Medidas");
         jLabel_Medidas.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         javax.swing.GroupLayout jPanel_MedidasLayout = new javax.swing.GroupLayout(jPanel_Medidas);
@@ -380,9 +384,9 @@ public class FrmAdmin extends javax.swing.JFrame {
 
         jLabel_Categorias.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel_Categorias.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel_Categorias.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel_Categorias.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel_Categorias.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/box.png"))); // NOI18N
-        jLabel_Categorias.setText("Categorias");
+        jLabel_Categorias.setText("     Categorias");
         jLabel_Categorias.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         javax.swing.GroupLayout jPanel_CategoriasLayout = new javax.swing.GroupLayout(jPanel_Categorias);
@@ -406,9 +410,9 @@ public class FrmAdmin extends javax.swing.JFrame {
 
         jLabel_Configuracion.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel_Configuracion.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel_Configuracion.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel_Configuracion.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel_Configuracion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/config.png"))); // NOI18N
-        jLabel_Configuracion.setText("Configuración");
+        jLabel_Configuracion.setText("     Configuración");
         jLabel_Configuracion.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         javax.swing.GroupLayout jPanel_ConfiguracionLayout = new javax.swing.GroupLayout(jPanel_Configuracion);
@@ -432,9 +436,9 @@ public class FrmAdmin extends javax.swing.JFrame {
 
         jLabel_Usuaio.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel_Usuaio.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel_Usuaio.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel_Usuaio.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel_Usuaio.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/users.png"))); // NOI18N
-        jLabel_Usuaio.setText("Usuarios");
+        jLabel_Usuaio.setText("     Usuarios");
         jLabel_Usuaio.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         javax.swing.GroupLayout jPanel_UsuariosLayout = new javax.swing.GroupLayout(jPanel_Usuarios);
@@ -479,7 +483,7 @@ public class FrmAdmin extends javax.swing.JFrame {
 
         jLabel56.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         jLabel56.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel56.setText("Informatica y Programación");
+        jLabel56.setText("Informática y Programación");
         jPanel3.add(jLabel56, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 50, -1, -1));
 
         getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 0, 1100, 140));
@@ -630,7 +634,7 @@ public class FrmAdmin extends javax.swing.JFrame {
 
         jPanel1.add(jPanel_NuevoProducto_Paginador, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 280, 450, 40));
 
-        jTabbedPane1.addTab("tab1", jPanel1);
+        jTabbedPane1.addTab("Productos", jPanel1);
 
         jPanel4.setBackground(new java.awt.Color(204, 204, 255));
         jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -736,7 +740,7 @@ public class FrmAdmin extends javax.swing.JFrame {
 
         jPanel4.add(jPanel_NuevoCliente_Paginador, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 280, 450, 40));
 
-        jTabbedPane1.addTab("tab2", jPanel4);
+        jTabbedPane1.addTab("Clientes", jPanel4);
 
         jPanel5.setBackground(new java.awt.Color(255, 204, 255));
         jPanel5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -852,7 +856,7 @@ public class FrmAdmin extends javax.swing.JFrame {
 
         jPanel5.add(jPanel_NuevoProveedor_Paginador, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 280, 450, 40));
 
-        jTabbedPane1.addTab("tab3", jPanel5);
+        jTabbedPane1.addTab("Proveedores", jPanel5);
 
         jPanel6.setBackground(new java.awt.Color(255, 204, 204));
         jPanel6.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -874,6 +878,10 @@ public class FrmAdmin extends javax.swing.JFrame {
         jLabel23.setText("Alias");
 
         jLabel24.setText("Rol");
+
+        jComboBox_NuevoUsuario_Caja.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Caja General" }));
+
+        jComboBox_NuevoUsuario_Rol.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Rol General" }));
 
         javax.swing.GroupLayout jPanel18Layout = new javax.swing.GroupLayout(jPanel18);
         jPanel18.setLayout(jPanel18Layout);
@@ -921,12 +929,12 @@ public class FrmAdmin extends javax.swing.JFrame {
                 .addComponent(jLabel22)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel19)
-                    .addComponent(txt_NuevoUsuario_Nombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(5, 5, 5)
-                .addGroup(jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel23)
                     .addComponent(txt_NuevoUsuario_Alias, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(5, 5, 5)
+                .addGroup(jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel19)
+                    .addComponent(txt_NuevoUsuario_Nombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel20)
@@ -979,7 +987,7 @@ public class FrmAdmin extends javax.swing.JFrame {
 
         jPanel6.add(jPanel_NuevoUsuario_Paginador, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 280, 450, 40));
 
-        jTabbedPane1.addTab("tab4", jPanel6);
+        jTabbedPane1.addTab("Usuarios", jPanel6);
 
         jPanel7.setBackground(new java.awt.Color(255, 255, 204));
         jPanel7.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -1061,7 +1069,7 @@ public class FrmAdmin extends javax.swing.JFrame {
 
         jPanel7.add(jPanel_NuevaCategoria_Paginador, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 280, 450, 40));
 
-        jTabbedPane1.addTab("tab5", jPanel7);
+        jTabbedPane1.addTab("Categorias", jPanel7);
 
         jPanel8.setBackground(new java.awt.Color(204, 255, 204));
         jPanel8.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -1156,7 +1164,7 @@ public class FrmAdmin extends javax.swing.JFrame {
 
         jPanel8.add(jPanel_NuevaMedida_Paginador, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 280, 450, 40));
 
-        jTabbedPane1.addTab("tab6", jPanel8);
+        jTabbedPane1.addTab("Medidas", jPanel8);
 
         jPanel9.setBackground(new java.awt.Color(255, 204, 204));
         jPanel9.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -1354,7 +1362,7 @@ public class FrmAdmin extends javax.swing.JFrame {
 
         jPanel12.add(jPanel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 330, 310));
 
-        jTabbedPane1.addTab("tab10", jPanel12);
+        jTabbedPane1.addTab("Empresa", jPanel12);
 
         jPanel13.setBackground(new java.awt.Color(102, 102, 255));
         jPanel13.setLayout(new java.awt.BorderLayout());
@@ -1546,9 +1554,9 @@ public class FrmAdmin extends javax.swing.JFrame {
     private javax.swing.JButton btn_NuevoProveedor_Modifiar;
     private javax.swing.JButton btn_NuevoProveedor_Nuevo;
     private javax.swing.JButton btn_NuevoProveedor_Registrar;
-    private javax.swing.JButton btn_NuevoUsuario_Modifiar;
-    private javax.swing.JButton btn_NuevoUsuario_Nuevo;
-    private javax.swing.JButton btn_NuevoUsuario_Registrar;
+    public javax.swing.JButton btn_NuevoUsuario_Modifiar;
+    public javax.swing.JButton btn_NuevoUsuario_Nuevo;
+    public javax.swing.JButton btn_NuevoUsuario_Registrar;
     private javax.swing.JButton btn_Usuarios;
     private javax.swing.JComboBox<String> comboBox_NuevoProducto_Categoria;
     private javax.swing.JComboBox<String> comboBox_NuevoProducto_Medida;
@@ -1557,8 +1565,8 @@ public class FrmAdmin extends javax.swing.JFrame {
     private javax.swing.JButton jButton_NuevaVenta_Generar;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JComboBox<String> jComboBox2;
-    private javax.swing.JComboBox<String> jComboBox_NuevoUsuario_Caja;
-    private javax.swing.JComboBox<String> jComboBox_NuevoUsuario_Rol;
+    public javax.swing.JComboBox<String> jComboBox_NuevoUsuario_Caja;
+    public javax.swing.JComboBox<String> jComboBox_NuevoUsuario_Rol;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -1665,7 +1673,7 @@ public class FrmAdmin extends javax.swing.JFrame {
     public javax.swing.JPanel jPanel_Proveedor;
     public javax.swing.JPanel jPanel_Usuarios;
     private javax.swing.JPanel jPanel_Ventas;
-    private javax.swing.JPasswordField jPassword_NuevoUsuario_Contraseña;
+    public javax.swing.JPasswordField jPassword_NuevoUsuario_Contraseña;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane10;
     private javax.swing.JScrollPane jScrollPane11;
@@ -1726,7 +1734,7 @@ public class FrmAdmin extends javax.swing.JFrame {
     private javax.swing.JTextField txt_NuevoProveedor_Nombre;
     private javax.swing.JTextField txt_NuevoProveedor_Ruc;
     private javax.swing.JTextField txt_NuevoProveedor_Telefono;
-    private javax.swing.JTextField txt_NuevoUsuario_Alias;
-    private javax.swing.JTextField txt_NuevoUsuario_Nombre;
+    public javax.swing.JTextField txt_NuevoUsuario_Alias;
+    public javax.swing.JTextField txt_NuevoUsuario_Nombre;
     // End of variables declaration//GEN-END:variables
 }

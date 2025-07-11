@@ -6,7 +6,9 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import javax.swing.JOptionPane;
 
-public class UsuarioDao {
+
+// DAO Data Access Object
+public class UsuarioDAO {
 
     Conexion cn = new Conexion();
     Connection con;
@@ -19,7 +21,7 @@ public class UsuarioDao {
         try {
             Conexion.conectarBBDD();
             con = cn.getConexion();
-            
+
             ps = con.prepareStatement(sql);
             ps.setString(1, alias);
             ps.setString(2, contraseña);
@@ -36,5 +38,26 @@ public class UsuarioDao {
             JOptionPane.showMessageDialog(null, e.toString());
         }
         return usuario;
+    }
+
+    public boolean registrar(Usuario usuario) {
+        String sql = "INSERT INTO USUARIOS (alias, nombre, contraseña, caja, rol) VALUES (?,?,?,?,?)";
+
+        try {
+            Conexion.conectarBBDD();
+            con = cn.getConexion();
+
+            ps = con.prepareStatement(sql);
+            ps.setString(1, usuario.getAlias());
+            ps.setString(2, usuario.getNombre());
+            ps.setString(3, usuario.getContraseña());
+            ps.setString(4, usuario.getCaja());
+            ps.setString(5, usuario.getRol());
+            ps.execute();
+            return true;
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, e.toString());
+            return false;
+        }
     }
 }

@@ -1,7 +1,7 @@
 package Controllers;
 
 import Models.Usuario;
-import Models.UsuarioDao;
+import Models.UsuarioDAO;
 import Views.FrmAdmin;
 import Views.FrmLogin;
 import java.awt.event.ActionEvent;
@@ -11,10 +11,10 @@ import javax.swing.JOptionPane;
 public class LoginController implements ActionListener {
 
     private Usuario usuario;
-    private UsuarioDao usuarioDao;
+    private UsuarioDAO usuarioDao;
     private FrmLogin frmLogin;
 
-    public LoginController(Usuario usuario, UsuarioDao usuarioDao, FrmLogin frmLogin) {
+    public LoginController(Usuario usuario, UsuarioDAO usuarioDao, FrmLogin frmLogin) {
         this.usuario = usuario;
         this.usuarioDao = usuarioDao;
         this.frmLogin = frmLogin;

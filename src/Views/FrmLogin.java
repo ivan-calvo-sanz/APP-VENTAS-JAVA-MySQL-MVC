@@ -2,12 +2,12 @@ package Views;
 
 import Controllers.LoginController;
 import Models.Usuario;
-import Models.UsuarioDao;
+import Models.UsuarioDAO;
 
 public class FrmLogin extends javax.swing.JFrame {
 
     Usuario usuario = new Usuario();
-    UsuarioDao usuarioaDao = new UsuarioDao();
+    UsuarioDAO usuarioaDao = new UsuarioDAO();
 
     public FrmLogin() {
         initComponents();
